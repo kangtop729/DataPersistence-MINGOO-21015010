@@ -1,0 +1,8 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <BuildType Name="Debug" />
+    <BuildType Name="Release" />
+  </Configurations>
+  <Project Path="DataPersistence-MINGOO-21015010.vcxproj" Id="a3853261-5151-4ade-93c7-52d181b03779" />
+</Solution>
