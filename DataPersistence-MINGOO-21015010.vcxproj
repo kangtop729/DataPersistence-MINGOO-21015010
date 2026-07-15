@@ -85,6 +85,13 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Model\Item.h" />
+    <ClInclude Include="src\Repository\IRepository.h" />
+    <ClInclude Include="src\Repository\JsonFileRepository.h" />
+    <ClInclude Include="src\Serialization\ItemSerialization.h" />
+    <ClInclude Include="src\ThirdParty\nlohmann\json.hpp" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="packages.config" />
     <None Include="CLAUDE.md" />
     <None Include="PLAN.md" />
