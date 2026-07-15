@@ -76,7 +76,11 @@
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Serialization\ItemSerialization.cpp" />
+    <ClCompile Include="src\Repository\JsonFileRepository.cpp" />
     <ClCompile Include="test\ItemSerializationTest.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'!='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="test\JsonFileRepositoryTest.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'!='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
   </ItemGroup>
