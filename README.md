@@ -44,4 +44,15 @@ msbuild DataPersistence-MINGOO-21015010.vcxproj /p:Configuration=Release /p:Plat
 x64\Release\DataPersistence-MINGOO-21015010.exe
 ```
 
-(구현 진행에 따라 테스트 구성/실행 결과 절 추가 예정)
+Release 앱은 실행 위치에 `items.json`을 만들고, 실행할 때마다 기존 데이터를 유지한 채 새 `Widget`/`Gadget`
+쌍을 추가(Create) → `Widget` 수량 수정(Update) → 새로 추가한 `Gadget` 삭제(Delete)하는 CRUD 데모를
+수행한다. 재실행하면 이전 실행에서 저장된 항목이 `Before` 목록에 그대로 남아있어 파일 영속성을 눈으로
+확인할 수 있다.
+
+## 테스트
+
+- `ItemSerializationTest` (2개): `Item` ↔ `nlohmann::json` 변환(`to_json`/`from_json`)
+- `JsonFileRepositoryTest` (10개): 파일 없을 때 빈 목록, 저장 후 조회, **재로드해도 데이터가 유지되는지
+  (영속성 통합 테스트)**, `FindById`/`Update`/`Remove`의 성공·실패 케이스, **파일 손상 시 예외 발생**
+
+모든 클래스는 Red(실패하는 테스트 작성) → Green(최소 구현) 순서로 TDD 사이클을 거쳐 구현했다.

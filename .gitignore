@@ -3,6 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# CRUD 데모 실행 산출물 (실행할 때마다 생성/갱신됨)
+items.json
+
 # User-specific files
 *.rsuser
 *.suo
